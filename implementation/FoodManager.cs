@@ -8,10 +8,10 @@ namespace FDM.implementation
         public static List<Food> listOfFoods = new List<Food>(); //Temporary DatBase or innmemory
         public void CreateFood(string foodName, double price)
         {
-            Random random = new Random();
+            Random random = new Random(); //generate Radome food refrence ID from 100 to 999(3digit)
             int refNumber = random.Next(100, 999);
 
-            Food food = new Food(refNumber, foodName, price);
+            Food food = new Food(refNumber, foodName, price); // creating instance of food
             System.Console.WriteLine($"{food} Created successfully.");
         }
 
