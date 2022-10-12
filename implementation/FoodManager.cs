@@ -45,10 +45,10 @@ namespace FDM.implementation
         {
             foreach (var item in listOfFoods)
             {
-                if (item.RefNumber == refNumber )
+                if (item.RefNumber == refNumber)
                 {
                     return item;
-                    
+
                 }
             }
             return null;
@@ -59,7 +59,7 @@ namespace FDM.implementation
             Food foodToUpdate = GetFood(foodName);
             foodToUpdate.FoodName = newFoodName;
             foodToUpdate.Price = newPrice;
-            System.Console.WriteLine("Food update Successfully.");
+            Console.WriteLine("Food update Successfully.");
 
 
         }

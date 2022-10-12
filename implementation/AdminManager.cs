@@ -9,12 +9,13 @@ namespace FDM.implementation
             Random random = new Random();
             int adminID = random.Next(100, 999);
 
-            Admin admin = new Admin(firstName,lastName,email,pIN,post);
+            Admin admin = new Admin(firstName, lastName, email, pIN, adminID, post);
+            Console.WriteLine($"Dear {lastName}, Your Account created successfully.");
 
 
         }
 
-        public void DeleteAdmin(Admin email)
+        public void DeleteAdmin(string email)
         {
             foreach (var item in listOfAdmin)
             {
@@ -22,10 +23,9 @@ namespace FDM.implementation
                 {
                     listOfAdmin.Remove(item);
                     break;
-
                 }
-
             }
+            Console.WriteLine("Data deleted Successfully.");
         }
 
         public Admin GetAdmin(string email)
@@ -34,10 +34,11 @@ namespace FDM.implementation
             {
                 if (item.Email == email)
                 {
-
+                    return item;
                 }
 
             }
+            return null;
         }
 
         public Admin Login(string email, int pin)
@@ -46,14 +47,25 @@ namespace FDM.implementation
             {
                 if (item.Email == email && item.PIN == pin)
                 {
-                    return 
+                    return item;
                 }
             }
+            return null;
         }
 
-        public void UpdateAdmin(string firstName, string lastName)
+        public void UpdateAdmin(string firstName, string lastName, string email, string post)
         {
-            throw new NotImplementedException();
+            Admin adminToUpdate = GetAdmin(email); // y this
+            if (adminToUpdate != null)
+            {
+                adminToUpdate.FirstName = firstName;
+                adminToUpdate.LastName = lastName;
+                adminToUpdate.Post = post;
+                Console.WriteLine("Details Updated successfully.");
+            } else
+            {
+                Console.WriteLine("Admin not found!");
+            }
         }
     }
 
