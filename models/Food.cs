@@ -4,8 +4,10 @@ namespace FDM.models
     {
         public string FoodName { get; set; }
         public double Price { get; set; }
-        public Food(string foodName, double price)
+        public int RefNumber { get; set; }
+        public Food(int refNumber, string foodName, double price)
         {
+            RefNumber = refNumber;
             FoodName = foodName;
             Price = price;
         }
