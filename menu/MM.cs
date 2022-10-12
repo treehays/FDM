@@ -4,7 +4,7 @@ namespace FDM.menu
     {
         public void MainMenu()
         {
-            Console.WriteLine("Enter 1 as Admin Enter 2  as Chef\nEnter 3 as DeliveryMan");
+            Console.WriteLine("Enter 1 as Admin \nEnter 2  as Chef\nEnter 3 as DeliveryMan");
         }
     }
 }

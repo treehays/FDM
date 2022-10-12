@@ -55,12 +55,12 @@ namespace FDM.implementation
 
         public void UpdateAdmin(string firstName, string lastName, string email, string post)
         {
-            Admin adminToUpdate = GetAdmin(email); // y this
-            if (adminToUpdate != null)
+            Admin admin = GetAdmin(email); // y this
+            if (admin != null)
             {
-                adminToUpdate.FirstName = firstName;
-                adminToUpdate.LastName = lastName;
-                adminToUpdate.Post = post;
+                admin.FirstName = firstName;
+                admin.LastName = lastName;
+                admin.Post = post;
                 Console.WriteLine("Details Updated successfully.");
             } else
             {

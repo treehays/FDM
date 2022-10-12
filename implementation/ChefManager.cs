@@ -3,24 +3,53 @@ namespace FDM.implementation
 {
     public class ChefManager : IChefManager
     {
-        public bool CreateOrder(string firstName, string lastName, string email, string pIN, string chefID)
+        public static List<Chef> listOfChef = new List<Chef>();
+        public void CreateChef(string firstName, string lastName, string email, int pIN, int chefID)
         {
-            throw new NotImplementedException();
+            Random random = new Random();
+            chefID = random.Next(100, 999);
+            Chef chef = new Chef(firstName, lastName, email, pIN, chefID);
+            Console.WriteLine("Account created successfully.");
+
         }
 
-        public void DeleteOrder(Chef chef)
+        public void DeleteChef(String email)
         {
-            throw new NotImplementedException();
+            foreach (var item in listOfChef)
+            {
+                if (item.Email == email)
+                {
+                    listOfChef.Remove(item);
+                    break;
+                }
+            }
+            Console.WriteLine("Chef Data deleted Successfully..");
         }
 
-        public Chef GetOrder(string email)
+        public Chef GetChef(string email)
         {
-            throw new NotImplementedException();
+            foreach (var item in listOfChef)
+            {
+                if (item.Email == email)
+                {
+                    return item;                    
+                }
+            }
+            return null;
         }
 
-        public void UpdateOrder(string firstName, string lastName)
+        public void UpdateChef(string firstName, string lastName, string email)
         {
-            throw new NotImplementedException();
+            Chef chef = GetChef(email);
+            if (chef !=null)
+            {
+                chef.FirstName = firstName;
+                chef.LastName = lastName;
+                Console.WriteLine("Details Updated successfully.");
+            } else
+            {
+                Console.WriteLine("Admin not found.");
+            }
         }
     }
 
