@@ -8,7 +8,7 @@ namespace FDM
         public string ChefEmploymentDate { get; set; }
         public Chef(string firstName, string lastName, string email, string pIN, string chefID, string chefEmploymentDate) : base(firstName, lastName, email, pIN)
         {
-            chefID = chefID;
+            ChefID = chefID;
             ChefEmploymentDate =chefEmploymentDate;
             
 
