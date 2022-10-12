@@ -1,6 +1,6 @@
 namespace FDM.implementation
 {
-    public class ChefManager
+    public class ChefManager : IChefManager 
     {
         
     }

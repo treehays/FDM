@@ -1,6 +1,6 @@
 namespace FDM.implementation
 {
-    public class AdminManager
+    public class AdminManager : IAdminManager
     {
 
 

@@ -1,6 +1,6 @@
 namespace FDM.implementation
 {
-    public class CustomerManager
+    public class CustomerManager : ICustomerManager
     {
         
     }
