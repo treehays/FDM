@@ -1,6 +1,6 @@
 namespace FDM.implementation
 {
-    public class DeliveryManManager
+    public class DeliveryManManager : IDeliveryManManager
     {
         
     }
