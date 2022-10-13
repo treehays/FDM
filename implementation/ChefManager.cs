@@ -9,6 +9,7 @@ namespace FDM.implementation
             Random random = new Random();
             chefID = random.Next(100, 999);
             Chef chef = new Chef(firstName, lastName, email, pIN, chefID);
+            listOfChef.Add(chef);
             Console.WriteLine("Account created successfully.");
 
         }

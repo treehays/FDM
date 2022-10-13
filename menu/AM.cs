@@ -16,6 +16,7 @@ namespace FDM.menu
             }
             else if (choice == 2)
             {
+                LoginMenu();
             }
             else
             {

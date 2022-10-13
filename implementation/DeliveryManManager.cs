@@ -3,24 +3,32 @@ namespace FDM.implementation
 {
     public class DeliveryManManager : IDeliveryManManager
     {
-        public bool CreateDeliveryMan(string email)
+        public static List<DeliveryMan> listOfDeliveryMan = new List<DeliveryMan>();
+        public void CreateDeliveryMan(string firstName, string lastName, string email, string phoneNumber, int pIN, string bikePlateNumber)
         {
-            throw new NotImplementedException();
+            DeliveryMan deliveryMan = new DeliveryMan(firstName, lastName, email, phoneNumber, pIN, bikePlateNumber);
+            
         }
 
-        public void DeleteDeliveryMan()
+        public void DeleteDeliveryMan(string email)
         {
-            throw new NotImplementedException();
+            foreach (var item in listOfDeliveryMan)
+            {
+                if (item.Email == email)
+                {
+                    listOfDeliveryMan.Remove(item);
+                    break;
+                }
+            }
+            Console.WriteLine("Delivery Bike Data deleted Successfully..");
         }
 
         public void GetDeliveryMan(string email)
         {
-            throw new NotImplementedException();
         }
 
-        public void UpdateDeliveryMan(string firstName, string lastName, string phoneNumber)
+        public void UpdateDeliveryMan(string firstName, string lastName, string phoneNumber, string bikePlateNumber)
         {
-            throw new NotImplementedException();
         }
     }
 

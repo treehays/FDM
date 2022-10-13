@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Treehays\\Documents\\CLH\\Projects\\FDM\\FDM.csproj",
+      "projectUniqueName": "C:\\Users\\Treehays\\Documents\\CLH\\FDM\\FDM.csproj",
       "projectName": "FDM",
-      "projectPath": "C:\\Users\\Treehays\\Documents\\CLH\\Projects\\FDM\\FDM.csproj",
+      "projectPath": "C:\\Users\\Treehays\\Documents\\CLH\\FDM\\FDM.csproj",
       "packagesPath": "C:\\Users\\Treehays\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Treehays\\Documents\\CLH\\Projects\\FDM\\obj\\",
+      "outputPath": "C:\\Users\\Treehays\\Documents\\CLH\\FDM\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Treehays\\AppData\\Roaming\\NuGet\\NuGet.Config",

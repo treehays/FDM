@@ -2,15 +2,18 @@ namespace FDM
 {
     public class Customer : User
     {
-        public string Address { get; set; }
+        // public string Address { get; set; }
         public string PhoneNumber { get; set; }
-        public double Wallet { get; set; }
-        public Customer(string firstName, string lastName, string email, int pIN, string address, string phoneNumber, double wallet) : base(firstName, lastName, email, pIN)
+        public int CustomerID { get; set; }
+        public string CustomerAddress { get; set; }
+        // public double Wallet { get; set; }
+        public Customer(string firstName, string lastName, string email, int pIN, string customerAddress, string phoneNumber, int customerID) : base(firstName, lastName, email, pIN)
         {
-            Address = address;
+            CustomerID = customerID;
             PhoneNumber = phoneNumber;
-            Wallet = wallet;
+            CustomerAddress = customerAddress;
         }
+        
 
     }
 }

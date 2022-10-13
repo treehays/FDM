@@ -7,7 +7,7 @@ namespace FDM.interfaces
         public void UpdateAdmin(string firstName, string lastName, string email, string post);
         public void DeleteAdmin(string email);
         public Admin GetAdmin(string email);
-        public Admin Login(string email, int pin);
+        public Admin Login(string email, int pIN);
 
     }
 }

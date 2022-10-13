@@ -10,7 +10,8 @@ namespace FDM.implementation
             int adminID = random.Next(100, 999);
 
             Admin admin = new Admin(firstName, lastName, email, pIN, adminID, post);
-            Console.WriteLine($"Dear {lastName}, Your Account created successfully.");
+            listOfAdmin.Add(admin);
+            Console.WriteLine($"Dear {lastName}, Your was Account created successfully.");
 
 
         }
@@ -41,11 +42,11 @@ namespace FDM.implementation
             return null;
         }
 
-        public Admin Login(string email, int pin)
+        public Admin Login(string email, int pIN)
         {
             foreach (var item in listOfAdmin)
             {
-                if (item.Email == email && item.PIN == pin)
+                if (item.Email == email && item.PIN == pIN)
                 {
                     return item;
                 }
