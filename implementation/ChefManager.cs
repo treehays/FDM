@@ -4,10 +4,10 @@ namespace FDM.implementation
     public class ChefManager : IChefManager
     {
         public static List<Chef> listOfChef = new List<Chef>();
-        public void CreateChef(string firstName, string lastName, string email, int pIN, int chefID)
+        public void CreateChef(string firstName, string lastName, string email, int pIN)
         {
             Random random = new Random();
-            chefID = random.Next(100, 999);
+            int chefID = random.Next(100, 999);
             Chef chef = new Chef(firstName, lastName, email, pIN, chefID);
             listOfChef.Add(chef);
             Console.WriteLine("Account created successfully.");
@@ -24,7 +24,7 @@ namespace FDM.implementation
                     break;
                 }
             }
-            Console.WriteLine("Chef Data deleted Successfully..");
+            Console.WriteLine("Chef Data permanently deleted ..");
         }
 
         public Chef GetChef(string email)
@@ -34,6 +34,18 @@ namespace FDM.implementation
                 if (item.Email == email)
                 {
                     return item;                    
+                }
+            }
+            return null;
+        }
+
+        public Chef Login(string email, int pIN)
+        {
+            foreach (var item in listOfChef)
+            {
+                if (item.Email == email && item.PIN == pIN)
+                {
+                    return item;
                 }
             }
             return null;

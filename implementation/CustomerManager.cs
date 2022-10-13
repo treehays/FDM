@@ -27,12 +27,44 @@ namespace FDM.implementation
             Console.WriteLine("Customer Data deleted Successfully..");
         }
 
-        public void GetCustomer(string customerEmail)
+        public Customer GetCustomer(string email)
         {
+            foreach (var item in listOfCustomer)
+            {
+                if (item.Email == email)
+                {
+                    return item;
+                }
+            }
+            return null;
+
         }
 
-        public void UpdateCustomer(string customerFirstName, string customerLastName, string customerAddress)
+        public Customer Login(string email, int pIN)
         {
+            foreach (var item in listOfCustomer)
+            {
+                if (item.Email == email && item.PIN == pIN)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        public void UpdateCustomer(string firstName, string lastName, string email, string address)
+        {
+            Customer customer = GetCustomer(email);
+            if (customer != null)
+            {
+                customer.FirstName = firstName;
+                customer.LastName = lastName;
+                Console.WriteLine("Details Updated successfully.");
+            }
+            else
+            {
+                Console.WriteLine("Admin not found.");
+            }
         }
     }
 

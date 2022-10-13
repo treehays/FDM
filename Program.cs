@@ -7,5 +7,9 @@ abstration abstract class and inheritrance
 polymophism 
 */
 using FDM.menu;
-MM mm = new MM();
-mm.MainMenu();
+
+MMainMenu mMainMenu = new MMainMenu();
+
+mMainMenu.MainMenu();
+
+

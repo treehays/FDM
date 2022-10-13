@@ -4,22 +4,22 @@ namespace FDM.implementation
 {
     public class OrderManager : IOrderManager
     {
-        public bool ICreateFood()
+        public void CreateOrder(int orderId, string orderStatus)
         {
             throw new NotImplementedException();
         }
 
-        public void IDeleteFood()
+        public void DeleteOrder(int orderId )
         {
             throw new NotImplementedException();
         }
 
-        public void IGetFood()
+        public Order GetOrder(string orderId)
         {
             throw new NotImplementedException();
         }
 
-        public void IUpdateFood()
+        public void UpdateOrder(string orderStatus)
         {
             throw new NotImplementedException();
         }

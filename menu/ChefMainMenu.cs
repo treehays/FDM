@@ -2,16 +2,17 @@ using FDM.implementation;
 using FDM.interfaces;
 namespace FDM.menu
 {
-    public class AM
+    public class ChefMainMenu
     {
-        IAdminManager adminManager = new AdminManager();
-        public void AdminMenu()
+        IChefManager chefManager = new ChefManager();
+        public void ChefMenu()
         {
+
             Console.WriteLine("Enter 1 to Register \nEnter 2  to Login \nEnter 3 to Go Back");
             int choice = int.Parse(Console.ReadLine());
             if (choice == 1)
             {
-                RegisterAdminMenu();
+                RegisterChefMenu();
 
             }
             else if (choice == 2)
@@ -24,9 +25,11 @@ namespace FDM.menu
             }
 
         }
-        public void RegisterAdminMenu()
+        public void RegisterChefMenu()
+
         {
-            Console.Write("Enter First Name: ");
+
+            Console.Write("Chef First Name: ");
             string firstName = Console.ReadLine();
             Console.Write("Enter Last Name: ");
             string lastName = Console.ReadLine();
@@ -34,11 +37,11 @@ namespace FDM.menu
             string email = Console.ReadLine();
             Console.Write("Enter PIN: ");
             int pIN = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter post: ");
-            string post = Console.ReadLine();
+            //Console.Write("Enter post: ");
+            //  string post = Console.ReadLine();
 
-            adminManager.CreateAdmin(firstName, lastName, email, pIN, post);
-            AdminMenu();
+            chefManager.CreateChef(firstName, lastName, email, pIN);
+            ChefMenu();
         }
         public void LoginMenu()
         {
@@ -47,11 +50,11 @@ namespace FDM.menu
             Console.Write("PIN: ");
             int pIN = Convert.ToInt32(Console.ReadLine());
 
-            Admin ad = adminManager.Login(email, pIN);
-            if (ad != null)
+            Chef che = chefManager.Login(email, pIN);
+            if (che != null)
             {
                 Console.WriteLine("Login Successful.");
-                AdminSubMenu();
+                ChefSubMenu();
             }
             else
             {
@@ -59,10 +62,10 @@ namespace FDM.menu
             }
         }
 
-        public void AdminSubMenu ()
+        public void ChefSubMenu()
         {
             Console.WriteLine("Enter 1 to Add Food \nEnter 2  to Update Food \nEnter 3 to Go Back"); //need modification
-            
+
         }
 
 
